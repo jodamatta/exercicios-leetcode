@@ -1,0 +1,17 @@
+// The API isBadVersion is defined for you.
+// bool isBadVersion(int version);
+
+int firstBadVersion(int n) {
+    int inicio, fim, meio; 
+    inicio = 0;
+    fim = n;
+    while (inicio < fim){
+        meio = inicio + (fim - inicio) / 2;
+        if (isBadVersion(meio)){
+            fim = meio;
+        } else {
+            inicio = meio + 1;
+        } 
+    }
+    return inicio;
+}
